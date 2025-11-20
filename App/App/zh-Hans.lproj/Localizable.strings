@@ -1,0 +1,104 @@
+/* 
+  Localizable.strings
+  MyFA
+  
+  简体中文本地化
+*/
+
+/* App */
+"app.title" = "MyFA";
+"app.welcome" = "已连接！发送消息开始聊天。";
+"app.error" = "错误";
+"app.ok" = "确定";
+"app.cancel" = "取消";
+
+/* Status */
+"status.connecting" = "连接中...";
+"status.reconnecting" = "重新连接中...";
+"status.connected" = "已连接";
+"status.disconnected" = "已断开连接";
+
+/* Composer */
+"composer.tools" = "工具";
+"composer.search.placeholder" = "搜索";
+
+/* Tools */
+"tool.expedia" = "Expedia";
+"tool.booking" = "Booking.com";
+"tool.coursera" = "Coursera";
+"tool.expedia.description" = "搜索和预订航班、酒店和度假套餐";
+"tool.booking.description" = "查找和预订全球酒店、公寓和住宿";
+"tool.coursera.description" = "搜索和注册来自顶尖大学和公司的在线课程";
+
+/* Settings */
+"settings.language" = "语言";
+"settings.language.en" = "English";
+"settings.language.zhHans" = "简体中文";
+"settings.language.zhHant" = "繁體中文";
+"settings.language.change" = "更改语言";
+"settings.language.restart" = "语言已更改";
+"settings.language.restartMessage" = "请重启应用以应用新的语言设置。";
+"settings.language.restartButton" = "确定";
+
+/* Conversation List */
+"conversation.list.header.title" = "MyFA";
+"conversation.list.pin" = "置顶对话：%@";
+
+/* Tab Bar */
+"tab.chat" = "对话";
+"tab.strategies" = "策略";
+"tab.assets" = "资产";
+
+/* Strategies */
+"strategies.title" = "策略广场";
+"strategies.subtitle" = "发现优质投资策略";
+"strategies.take.to.chat" = "拿来聊";
+"strategies.follow" = "跟投";
+"strategies.annual.return" = "年化收益";
+"strategies.max.drawdown" = "最大回撤";
+"strategies.sharpe.ratio" = "夏普比率";
+"strategies.win.rate" = "胜率";
+"strategies.followers" = "跟随人数";
+"strategies.recent.followers" = "最近 7 天 %d 人新增";
+"strategies.shared.strategy" = "分享了投资策略";
+"strategies.risk.medium" = "中风险";
+"strategies.risk.low" = "低风险";
+"strategies.risk.high" = "高风险";
+"strategies.term.medium" = "中长线";
+"strategies.term.long" = "长线";
+"strategies.term.short" = "短线";
+"strategies.type.etf.stock" = "ETF+个股";
+
+/* Assets */
+"assets.title" = "资产";
+"assets.subtitle" = "查看您的投资组合";
+"assets.journey.title" = "开始你的投资之旅";
+"assets.journey.subtitle" = "开户由AI智能引导，全程约5-8分钟\n支持随时中断，进度自动保存";
+"assets.opening.title" = "开户流程";
+"assets.opening.step1" = "身份验证";
+"assets.opening.step2" = "实人见证";
+"assets.opening.step3" = "风险评估";
+"assets.start.opening" = "开始开户";
+"assets.has.account" = "已有证券账户？立即登录";
+
+/* Navigation */
+"nav.back" = "返回";
+
+/* Errors */
+"error.create.conversation" = "创建对话失败，请重试。";
+
+/* Location */
+"location.title" = "位置";
+"location.search.placeholder" = "搜索位置";
+"location.use.button" = "使用此位置";
+"location.selected" = "已选择位置";
+"location.close" = "关闭";
+
+/* Calendar */
+"calendar.title" = "即将到来的事件";
+"calendar.sample.meeting" = "示例会议";
+"calendar.untitled.event" = "未命名事件";
+"calendar.use.button" = "使用此事件";
+"calendar.close" = "关闭";
+"calendar.no.title" = "（无标题）";
+

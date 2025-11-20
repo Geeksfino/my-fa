@@ -1,0 +1,53 @@
+name: MyFA
+options:
+  bundleIdPrefix: com.finclip.chatkit
+  deploymentTarget:
+    iOS: "16.0"
+
+schemes:
+  MyFA:
+    build:
+      targets:
+        MyFA: all
+    run:
+      config: Debug
+
+packages:
+  FinClipChatKit:
+    url: https://github.com/Geeksfino/finclip-chatkit.git
+    from: 0.7.4
+  finclip-neuron:
+    url: https://github.com/Geeksfino/finclip-neuron.git
+    branch: main-swift6_0
+
+targets:
+  MyFA:
+    type: application
+    platform: iOS
+    sources:
+      - path: App/App
+      - path: App/Extensions
+      - path: App/ViewControllers
+      - path: App/Models
+      - path: App/Services
+      - path: App/Components
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.finclip.chatkit.myfa
+      PRODUCT_NAME: MyFA
+      INFOPLIST_KEY_CFBundleDisplayName: MyFA
+      INFOPLIST_FILE: App/App/Info.plist
+      ENABLE_BITCODE: NO
+      DEVELOPMENT_LANGUAGE: en
+      INFOPLIST_KEY_CFBundleLocalizations: en, zh-Hans
+    dependencies:
+      - product: FinClipChatKit
+        package: FinClipChatKit
+      - product: NeuronKit
+        package: finclip-neuron
+      - product: SandboxSDK
+        package: finclip-neuron  
+      - product: convstorelib
+        package: finclip-neuron
+      - product: ConvoUI
+        package: finclip-neuron  
+

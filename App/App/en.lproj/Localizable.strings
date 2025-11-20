@@ -1,0 +1,104 @@
+/* 
+  Localizable.strings
+  MyFA
+  
+  English Localization
+*/
+
+/* App */
+"app.title" = "MyFA";
+"app.welcome" = "Connected! Send a message to start chatting.";
+"app.error" = "Error";
+"app.ok" = "OK";
+"app.cancel" = "Cancel";
+
+/* Status */
+"status.connecting" = "Connecting...";
+"status.reconnecting" = "Reconnecting...";
+"status.connected" = "Connected";
+"status.disconnected" = "Disconnected";
+
+/* Composer */
+"composer.tools" = "Tools";
+"composer.search.placeholder" = "Search";
+
+/* Tools */
+"tool.expedia" = "Expedia";
+"tool.booking" = "Booking.com";
+"tool.coursera" = "Coursera";
+"tool.expedia.description" = "Search and book flights, hotels, and vacation packages";
+"tool.booking.description" = "Find and book hotels, apartments, and accommodations worldwide";
+"tool.coursera.description" = "Search and enroll in online courses from top universities and companies";
+
+/* Settings */
+"settings.language" = "Language";
+"settings.language.en" = "English";
+"settings.language.zhHans" = "简体中文";
+"settings.language.zhHant" = "繁體中文";
+"settings.language.change" = "Change Language";
+"settings.language.restart" = "Language Changed";
+"settings.language.restartMessage" = "Please restart the app to apply the new language setting.";
+"settings.language.restartButton" = "OK";
+
+/* Conversation List */
+"conversation.list.header.title" = "MyFA";
+"conversation.list.pin" = "Pin conversation: %@";
+
+/* Tab Bar */
+"tab.chat" = "Chat";
+"tab.strategies" = "Strategies";
+"tab.assets" = "Assets";
+
+/* Strategies */
+"strategies.title" = "Strategy Marketplace";
+"strategies.subtitle" = "Discover quality investment strategies";
+"strategies.take.to.chat" = "Take to Chat";
+"strategies.follow" = "Follow";
+"strategies.annual.return" = "Annual Return";
+"strategies.max.drawdown" = "Max Drawdown";
+"strategies.sharpe.ratio" = "Sharpe Ratio";
+"strategies.win.rate" = "Win Rate";
+"strategies.followers" = "Followers";
+"strategies.recent.followers" = "Recently added %d followers in 7 days";
+"strategies.shared.strategy" = "Shared investment strategy";
+"strategies.risk.medium" = "Medium Risk";
+"strategies.risk.low" = "Low Risk";
+"strategies.risk.high" = "High Risk";
+"strategies.term.medium" = "Medium Term";
+"strategies.term.long" = "Long Term";
+"strategies.term.short" = "Short Term";
+"strategies.type.etf.stock" = "ETF + Stock";
+
+/* Assets */
+"assets.title" = "Assets";
+"assets.subtitle" = "View your investment portfolio";
+"assets.journey.title" = "Start Your Investment Journey";
+"assets.journey.subtitle" = "AI-guided account opening, takes about 5-8 minutes\nSupports interruption, progress auto-saved";
+"assets.opening.title" = "Account Opening Process";
+"assets.opening.step1" = "Identity Verification";
+"assets.opening.step2" = "Live Verification";
+"assets.opening.step3" = "Risk Assessment";
+"assets.start.opening" = "Start Account Opening";
+"assets.has.account" = "Already have a securities account? Login now";
+
+/* Navigation */
+"nav.back" = "Back";
+
+/* Errors */
+"error.create.conversation" = "Failed to create conversation. Please try again.";
+
+/* Location */
+"location.title" = "Location";
+"location.search.placeholder" = "Search for a location";
+"location.use.button" = "Use This Location";
+"location.selected" = "Selected Location";
+"location.close" = "Close";
+
+/* Calendar */
+"calendar.title" = "Upcoming Event";
+"calendar.sample.meeting" = "Sample Meeting";
+"calendar.untitled.event" = "Untitled Event";
+"calendar.use.button" = "Use This Event";
+"calendar.close" = "Close";
+"calendar.no.title" = "(No Title)";
+
