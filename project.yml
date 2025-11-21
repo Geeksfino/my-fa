@@ -15,7 +15,7 @@ schemes:
 packages:
   FinClipChatKit:
     url: https://github.com/Geeksfino/finclip-chatkit.git
-    from: 0.7.4
+    from: 0.9.1
   finclip-neuron:
     url: https://github.com/Geeksfino/finclip-neuron.git
     branch: main-swift6_0
@@ -39,6 +39,12 @@ targets:
       ENABLE_BITCODE: NO
       DEVELOPMENT_LANGUAGE: en
       INFOPLIST_KEY_CFBundleLocalizations: en, zh-Hans
+      CODE_SIGN_STYLE: Automatic
+      FRAMEWORK_SEARCH_PATHS[sdk=iphoneos*]: $(inherited) $(BUILT_PRODUCTS_DIR)/FinClipChatKit.framework/Frameworks
+      FRAMEWORK_SEARCH_PATHS[sdk=iphonesimulator*]: $(inherited) $(BUILT_PRODUCTS_DIR)/FinClipChatKit.framework/Frameworks
+      LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks @loader_path/Frameworks @loader_path/Frameworks/FinClipChatKit.framework/Frameworks
+      SWIFT_INCLUDE_PATHS[sdk=iphoneos*]: $(inherited) $(BUILT_PRODUCTS_DIR)/FinClipChatKit.framework/Frameworks
+      SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]: $(inherited) $(BUILT_PRODUCTS_DIR)/FinClipChatKit.framework/Frameworks
     dependencies:
       - product: FinClipChatKit
         package: FinClipChatKit
@@ -49,5 +55,29 @@ targets:
       - product: convstorelib
         package: finclip-neuron
       - product: ConvoUI
-        package: finclip-neuron  
+        package: finclip-neuron
+    postbuildScripts:
+      - name: Sign Nested Frameworks
+        shell: /bin/sh
+        inputFiles:
+          - $(TARGET_BUILD_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FinClipChatKit.framework/Frameworks
+        script: |
+          # Only run for device builds, not simulator
+          if [ "${PLATFORM_NAME}" != "iphonesimulator" ]; then
+            FRAMEWORK_DIR="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FinClipChatKit.framework/Frameworks"
+            if [ -d "${FRAMEWORK_DIR}" ]; then
+              echo "Signing nested frameworks in ${FRAMEWORK_DIR}"
+              find "${FRAMEWORK_DIR}" -type d -name "*.framework" -print0 | while IFS= read -r -d '' FRAME; do
+                if [ -d "${FRAME}" ]; then
+                  echo "Signing ${FRAME}"
+                  /usr/bin/codesign --force --sign "${EXPANDED_CODE_SIGN_IDENTITY}" --preserve-metadata=identifier,entitlements "${FRAME}" || echo "Warning: Failed to sign ${FRAME}"
+                fi
+              done
+              echo "Finished signing nested frameworks"
+            else
+              echo "Note: FinClipChatKit nested frameworks directory not found at ${FRAMEWORK_DIR}"
+            fi
+          else
+            echo "Skipping nested framework signing for simulator build"
+          fi
 

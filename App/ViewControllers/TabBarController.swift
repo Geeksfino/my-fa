@@ -9,6 +9,7 @@ final class TabBarController: UITabBarController {
     private var chatNav: UINavigationController?
     private var strategiesNav: UINavigationController?
     private var assetsNav: UINavigationController?
+    private var settingsNav: UINavigationController?
     
     init(coordinator: ChatKitCoordinator) {
         self.coordinator = coordinator
@@ -23,6 +24,27 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         setupTabs()
         setupAppearance()
+        observeLanguageChanges()
+    }
+    
+    private func observeLanguageChanges() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(languageDidChange),
+            name: NSNotification.Name("LanguageChanged"),
+            object: nil
+        )
+    }
+    
+    @objc private func languageDidChange() {
+        updateTabBarTitles()
+    }
+    
+    private func updateTabBarTitles() {
+        chatNav?.tabBarItem.title = LocalizationHelper.localized("tab.chat")
+        strategiesNav?.tabBarItem.title = LocalizationHelper.localized("tab.strategies")
+        assetsNav?.tabBarItem.title = LocalizationHelper.localized("tab.assets")
+        settingsNav?.tabBarItem.title = LocalizationHelper.localized("settings.title")
     }
     
     private func setupTabs() {
@@ -57,7 +79,16 @@ final class TabBarController: UITabBarController {
             selectedImage: UIImage(systemName: "wallet.pass.fill")
         )
         
-        viewControllers = [chatNav!, strategiesNav!, assetsNav!]
+        // 4. Settings Tab
+        let settingsVC = SettingsViewController()
+        settingsNav = UINavigationController(rootViewController: settingsVC)
+        settingsNav?.tabBarItem = UITabBarItem(
+            title: LocalizationHelper.localized("settings.title"),
+            image: UIImage(systemName: "gearshape"),
+            selectedImage: UIImage(systemName: "gearshape.fill")
+        )
+        
+        viewControllers = [chatNav!, strategiesNav!, assetsNav!, settingsNav!]
     }
     
     private func setupAppearance() {

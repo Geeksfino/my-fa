@@ -400,8 +400,8 @@ struct LocationContextItem: ConvoUIContextItem {
             ContextDescriptionTemplate(
                 locale: "zh-CN",
                 template: place.isEmpty
-                    ? "位置在纬度 {latitude}、经度 {longitude}。"
-                    : "位置在 {placeName}（纬度 {latitude}、经度 {longitude}）。"
+                    ? LocalizationHelper.localized("location.template.coords")
+                    : LocalizationHelper.localized("location.template.place")
             )
         ]
     }

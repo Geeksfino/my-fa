@@ -16,12 +16,12 @@ class MockStrategyService {
         return [
             Strategy(
                 id: "strategy-1",
-                title: "三次抄底失败之后，我换成这套\"慢半拍\"策略",
-                description: "2023年初我经历了三次失败的抄底，每次都以为是底部结果还能跌。后来我改变策略，不再试图抓住最低点，而是等市场企稳后再进场。这个策略让我在2023-2024年稳定获得了68%的收益，最大回撤控制在12%以内。",
+                title: LocalizationHelper.localized("strategy.sample1.title"),
+                description: LocalizationHelper.localized("strategy.sample1.desc"),
                 creator: Strategy.Creator(
-                    name: "稳健投资者",
+                    name: LocalizationHelper.localized("strategy.sample1.creator"),
                     avatarColor: "#6B5CE7",
-                    role: "策略创建者"
+                    role: LocalizationHelper.localized("strategy.sample1.role")
                 ),
                 performance: Strategy.Performance(
                     annualReturn: 23.8,
@@ -50,12 +50,12 @@ class MockStrategyService {
             ),
             Strategy(
                 id: "strategy-2",
-                title: "只在极端恐慌时出手的宽基ETF策略",
-                description: "我的投资哲学很简单：别人恐慌时我贪婪。这个策略只做一件事，就是等待市场恐慌指数达到极值时分批买入宽基ETF。2022年11月开始执行，至今收益45%，期间几乎不需要操作，适合上班族。",
+                title: LocalizationHelper.localized("strategy.sample2.title"),
+                description: LocalizationHelper.localized("strategy.sample2.desc"),
                 creator: Strategy.Creator(
-                    name: "佛系投资人",
+                    name: LocalizationHelper.localized("strategy.sample2.creator"),
                     avatarColor: "#5B9FD7",
-                    role: "策略创建者"
+                    role: LocalizationHelper.localized("strategy.sample2.role")
                 ),
                 performance: Strategy.Performance(
                     annualReturn: 18.5,

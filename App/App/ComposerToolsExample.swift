@@ -18,53 +18,70 @@ class ComposerToolsExample {
     static func createExampleTools() -> [FinConvoComposerTool] {
         var tools: [FinConvoComposerTool] = []
         
-        // Example 1: Expedia - Travel Booking Service
-        let expediaLogo = UIImage(named: "tool_expedia") ?? UIImage(systemName: "airplane")?.withTintColor(.systemOrange, renderingMode: .alwaysOriginal)
-        let expediaTool = FinConvoComposerTool(
-            itemId: "expedia",
-            displayName: "Expedia",
-            logoImage: expediaLogo
+        // Example 1: CoinGecko - Crypto Market Data
+        // Using generic "bitcoinsign.circle.fill" if custom image not found
+        let coingeckoLogo = UIImage(named: "tool_coingecko") ?? UIImage(systemName: "bitcoinsign.circle.fill")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+        let coingeckoTool = FinConvoComposerTool(
+            itemId: "coingecko",
+            displayName: "CoinGecko",
+            logoImage: coingeckoLogo
         )
-        expediaTool.badgeColor = .systemOrange
-        expediaTool.metadata = [
-            "endpoint": "https://api.expedia.com/v1",
-            "service": "travel",
-            "description": "Search and book flights, hotels, and vacation packages",
-            "capabilities": ["flights", "hotels", "car-rentals", "vacation-packages"]
+        coingeckoTool.badgeColor = .systemGreen
+        coingeckoTool.metadata = [
+            "endpoint": "https://api.coingecko.com/api/v3",
+            "service": "crypto_data",
+            "description": "Real-time cryptocurrency prices, charts, and market data",
+            "capabilities": ["price", "charts", "market-cap", "volume"]
         ]
-        tools.append(expediaTool)
+        tools.append(coingeckoTool)
         
-        // Example 2: Booking.com - Accommodation Service
-        let bookingLogo = UIImage(named: "tool_booking") ?? UIImage(systemName: "building.2")?.withTintColor(.systemBlue, renderingMode: .alwaysOriginal)
-        let bookingTool = FinConvoComposerTool(
-            itemId: "booking",
-            displayName: "Booking.com",
-            logoImage: bookingLogo
+        // Example 2: Yahoo Finance - Stock Market Data
+        let yahooLogo = UIImage(named: "tool_yahoo") ?? UIImage(systemName: "chart.line.uptrend.xyaxis.circle.fill")?.withTintColor(.systemPurple, renderingMode: .alwaysOriginal)
+        let yahooTool = FinConvoComposerTool(
+            itemId: "yahoo_finance",
+            displayName: "Yahoo Finance",
+            logoImage: yahooLogo
         )
-        bookingTool.badgeColor = .systemBlue
-        bookingTool.metadata = [
-            "endpoint": "https://api.booking.com/v2",
-            "service": "accommodation",
-            "description": "Find and book hotels, apartments, and accommodations worldwide",
-            "capabilities": ["hotels", "apartments", "hostels", "resorts"]
+        yahooTool.badgeColor = .systemPurple
+        yahooTool.metadata = [
+            "endpoint": "https://finance.yahoo.com/api",
+            "service": "stock_data",
+            "description": "Stock market data, news, and portfolio tracking",
+            "capabilities": ["quotes", "news", "analysis", "options"]
         ]
-        tools.append(bookingTool)
+        tools.append(yahooTool)
         
-        // Example 3: Coursera - Online Learning Service
-        let courseraLogo = UIImage(named: "tool_coursera") ?? UIImage(systemName: "book.fill")?.withTintColor(.systemIndigo, renderingMode: .alwaysOriginal)
-        let courseraTool = FinConvoComposerTool(
-            itemId: "coursera",
-            displayName: "Coursera",
-            logoImage: courseraLogo
+        // Example 3: Bloomberg - Financial News
+        let bloombergLogo = UIImage(named: "tool_bloomberg") ?? UIImage(systemName: "newspaper.circle.fill")?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        let bloombergTool = FinConvoComposerTool(
+            itemId: "bloomberg",
+            displayName: "Bloomberg",
+            logoImage: bloombergLogo
         )
-        courseraTool.badgeColor = .systemIndigo
-        courseraTool.metadata = [
-            "endpoint": "https://api.coursera.org/v1",
-            "service": "education",
-            "description": "Search and enroll in online courses from top universities and companies",
-            "capabilities": ["courses", "specializations", "degrees", "certificates"]
+        bloombergTool.badgeColor = .black
+        bloombergTool.metadata = [
+            "endpoint": "https://api.bloomberg.com",
+            "service": "financial_news",
+            "description": "Global business and financial news, market analysis",
+            "capabilities": ["news", "analysis", "market-trends"]
         ]
-        tools.append(courseraTool)
+        tools.append(bloombergTool)
+        
+        // Example 4: Morningstar - Investment Research
+        let morningstarLogo = UIImage(named: "tool_morningstar") ?? UIImage(systemName: "star.circle.fill")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+        let morningstarTool = FinConvoComposerTool(
+            itemId: "morningstar",
+            displayName: "Morningstar",
+            logoImage: morningstarLogo
+        )
+        morningstarTool.badgeColor = .systemRed
+        morningstarTool.metadata = [
+            "endpoint": "https://api.morningstar.com",
+            "service": "investment_research",
+            "description": "Independent investment research and fund ratings",
+            "capabilities": ["ratings", "funds", "etfs", "research"]
+        ]
+        tools.append(morningstarTool)
         
         return tools
     }
@@ -86,8 +103,8 @@ class ComposerToolsExample {
         
         // The selected tool will be sent with the user's message to the backend
         // The LLM can then use this tool to fulfill the user's request
-        // Example: User says "Find me a hotel" + selects Booking.com
-        //          → Backend/LLM uses Booking.com API to search for hotels
+        // Example: User says "How is BTC doing?" + selects CoinGecko
+        //          → Backend/LLM uses CoinGecko API to get BTC price
     }
     
     /// Example: Update a composer tool dynamically

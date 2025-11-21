@@ -23,22 +23,18 @@
 "composer.search.placeholder" = "Search";
 
 /* Tools */
-"tool.expedia" = "Expedia";
-"tool.booking" = "Booking.com";
-"tool.coursera" = "Coursera";
-"tool.expedia.description" = "Search and book flights, hotels, and vacation packages";
-"tool.booking.description" = "Find and book hotels, apartments, and accommodations worldwide";
-"tool.coursera.description" = "Search and enroll in online courses from top universities and companies";
+"tool.coingecko" = "CoinGecko";
+"tool.yahoo" = "Yahoo Finance";
+"tool.bloomberg" = "Bloomberg";
+"tool.morningstar" = "Morningstar";
 
 /* Settings */
+"settings.title" = "Settings";
 "settings.language" = "Language";
 "settings.language.en" = "English";
-"settings.language.zhHans" = "简体中文";
-"settings.language.zhHant" = "繁體中文";
+"settings.language.zh" = "简体中文";
 "settings.language.change" = "Change Language";
-"settings.language.restart" = "Language Changed";
-"settings.language.restartMessage" = "Please restart the app to apply the new language setting.";
-"settings.language.restartButton" = "OK";
+"settings.language.current" = "Current: %@";
 
 /* Conversation List */
 "conversation.list.header.title" = "MyFA";
@@ -47,7 +43,7 @@
 /* Tab Bar */
 "tab.chat" = "Chat";
 "tab.strategies" = "Strategies";
-"tab.assets" = "Assets";
+"tab.assets" = "Portfolio";
 
 /* Strategies */
 "strategies.title" = "Strategy Marketplace";
@@ -68,9 +64,21 @@
 "strategies.term.long" = "Long Term";
 "strategies.term.short" = "Short Term";
 "strategies.type.etf.stock" = "ETF + Stock";
+"strategies.discuss" = "Start discussion based on strategy \"%@\"";
+
+/* Strategy Samples */
+"strategy.sample1.title" = "After 3 Failed Bottom Calls, I Switched to This \"Wait-and-See\" Strategy";
+"strategy.sample1.desc" = "Early 2023, I failed to catch the bottom 3 times. Each time I thought it was the bottom, it went lower. I changed my approach: instead of trying to catch the exact bottom, I wait for market stabilization. This strategy earned me 68% in 2023-2024 with max drawdown under 12%.";
+"strategy.sample1.creator" = "Steady Investor";
+"strategy.sample1.role" = "Strategy Creator";
+
+"strategy.sample2.title" = "Broad-Based ETF Strategy: Only Act During Extreme Panic";
+"strategy.sample2.desc" = "My philosophy is simple: be greedy when others are fearful. This strategy does one thing - wait for panic index to hit extremes, then gradually buy broad-based ETFs. Started Nov 2022, gained 45% so far with minimal operations. Perfect for working professionals.";
+"strategy.sample2.creator" = "Zen Investor";
+"strategy.sample2.role" = "Strategy Creator";
 
 /* Assets */
-"assets.title" = "Assets";
+"assets.title" = "Portfolio";
 "assets.subtitle" = "View your investment portfolio";
 "assets.journey.title" = "Start Your Investment Journey";
 "assets.journey.subtitle" = "AI-guided account opening, takes about 5-8 minutes\nSupports interruption, progress auto-saved";
@@ -80,6 +88,40 @@
 "assets.opening.step3" = "Risk Assessment";
 "assets.start.opening" = "Start Account Opening";
 "assets.has.account" = "Already have a securities account? Login now";
+"assets.login.demo" = "Login with Demo Account";
+"assets.login.title" = "Login";
+"assets.login.message" = "Enter credentials to access your portfolio.\n\nDemo User: johndoe\nPassword: 12345678";
+"assets.login.username" = "Username";
+"assets.login.password" = "Password";
+"assets.login.button" = "Login";
+"assets.login.error" = "Invalid credentials";
+"assets.total.balance" = "Total Balance";
+"assets.cash" = "Cash: %@";
+"assets.trade" = "Trade";
+"assets.logout" = "Logout";
+"assets.logout.confirm.title" = "Logout";
+"assets.logout.confirm.message" = "Are you sure you want to logout?";
+"assets.ask.about" = "Tell me about %@ (%@)";
+
+/* Portfolio Types */
+"portfolio.crypto" = "Crypto";
+"portfolio.stock" = "Stock";
+"portfolio.fund" = "Fund";
+"portfolio.bond" = "Bond";
+"portfolio.cash" = "Cash";
+
+/* Trade */
+"trade.want" = "I want to make a trade.";
+"trade.confirm.title" = "Confirm Trade";
+"trade.confirm.buy" = "Buy";
+"trade.confirm.sell" = "Sell";
+"trade.confirm.question" = "Are you sure you want to";
+"trade.confirm.for" = "for";
+"trade.confirm.button" = "Confirm";
+"trade.success.title" = "Success";
+"trade.success.message" = "Trade executed successfully.";
+"trade.failed.title" = "Failed";
+"trade.failed.message" = "Insufficient funds or asset not found.";
 
 /* Navigation */
 "nav.back" = "Back";
@@ -93,6 +135,8 @@
 "location.use.button" = "Use This Location";
 "location.selected" = "Selected Location";
 "location.close" = "Close";
+"location.template.coords" = "Location at latitude {latitude}, longitude {longitude}.";
+"location.template.place" = "Location at {placeName} (latitude {latitude}, longitude {longitude}).";
 
 /* Calendar */
 "calendar.title" = "Upcoming Event";
@@ -102,3 +146,5 @@
 "calendar.close" = "Close";
 "calendar.no.title" = "(No Title)";
 
+/* Account Opening Flow */
+"account.phone.prompt" = "First, please provide your phone number";

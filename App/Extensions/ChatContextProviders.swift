@@ -6,7 +6,8 @@ enum ChatContextProviderFactory {
         guard #available(iOS 15.0, *) else { return [] }
         return [
             ConvoUIContextProviderBridge(provider: LocationContextProvider()),
-            ConvoUIContextProviderBridge(provider: CalendarContextProvider())
+            ConvoUIContextProviderBridge(provider: CalendarContextProvider()),
+            ConvoUIContextProviderBridge(provider: PortfolioContextProvider())
         ]
     }
 }

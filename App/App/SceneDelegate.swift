@@ -20,6 +20,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window.makeKeyAndVisible()
 
     self.window = window
+    
+    // Handle URL if app launched via URL
+    if let urlContext = connectionOptions.urlContexts.first {
+        handleURL(urlContext.url)
+    }
+  }
+  
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let url = URLContexts.first?.url else { return }
+    handleURL(url)
+  }
+  
+  private func handleURL(_ url: URL) {
+    guard url.scheme == "myfa" else { return }
+    guard url.host == "trade" else { return }
+    
+    // Present trade confirmation
+    let tradeVC = TradeConfirmationViewController(url: url)
+    window?.rootViewController?.present(tradeVC, animated: true)
   }
   
   func sceneDidDisconnect(_ scene: UIScene) {

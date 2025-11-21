@@ -19,6 +19,25 @@ class StrategiesViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         loadStrategies()
+        observeLanguageChanges()
+    }
+    
+    private func observeLanguageChanges() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(languageDidChange),
+            name: NSNotification.Name("LanguageChanged"),
+            object: nil
+        )
+    }
+    
+    @objc private func languageDidChange() {
+        // Update title
+        title = LocalizationHelper.localized("strategies.title")
+        
+        // Reload strategies to refresh UI
+        contentStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        loadStrategies()
     }
     
     private func setupUI() {
@@ -118,7 +137,7 @@ class StrategiesViewController: UIViewController {
 // MARK: - StrategyCardDelegate
 extension StrategiesViewController: StrategyCardDelegate {
     func strategyCardDidTapTakeToChat(_ card: StrategyCardView, strategy: Strategy) {
-        let message = "开始基于策略《\(strategy.title)》的讨论"
+        let message = LocalizationHelper.localized("strategies.discuss", strategy.title)
         let context: [String: Any] = [
             "type": "strategy",
             "strategyId": strategy.id,

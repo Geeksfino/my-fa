@@ -59,6 +59,6 @@ extension DrawerViewController: ChatKitConversationListViewControllerDelegate {
     didPinConversation record: ConversationRecord
   ) {
     // Pin functionality - can be implemented later
-    print(LocalizationHelper.localized("conversation.list.pin", arguments: record.title))
+    print(LocalizationHelper.localized("conversation.list.pin", record.title))
   }
 }
