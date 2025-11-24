@@ -362,7 +362,9 @@ class AssetsViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func startAccountOpening() {
-        let message = LocalizationHelper.localized("account.phone.prompt")
+        // Send a user message that will trigger the agent to ask for phone number
+        // Instead of sending the agent's prompt message as a user message
+        let message = LocalizationHelper.localized("account.opening.request")
         let context: [String: Any] = [
             "type": "account_opening",
             "step": "phone_verification"

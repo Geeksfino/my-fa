@@ -148,3 +148,4 @@
 
 /* Account Opening Flow */
 "account.phone.prompt" = "First, please provide your phone number";
+"account.opening.request" = "I want to open an account";

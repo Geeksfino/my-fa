@@ -148,3 +148,4 @@
 
 /* Account Opening Flow */
 "account.phone.prompt" = "首先，请提供你的手机号码";
+"account.opening.request" = "我想开户";
