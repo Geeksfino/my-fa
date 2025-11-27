@@ -189,8 +189,19 @@ final class MainChatViewController: UIViewController {
     
     // Send the message through the conversation
     do {
-      try await chatVC.currentConversation.sendMessage(message)
-      print("[MainChatViewController] Initial message sent successfully")
+      if let context = context, !context.isEmpty {
+        // Convert context dictionary to ConversationContextItem using ChatKit factory
+        // This provides a unified way to attach context regardless of content type
+        let contextType = context["type"] as? String ?? "metadata"
+        let contextItem = ChatKitContextItemFactory.metadata(context, type: contextType)
+        
+        try await chatVC.currentConversation.sendMessage(message, contextItems: [contextItem])
+        print("[MainChatViewController] Initial message sent successfully with context")
+      } else {
+        // Fallback to simple message without context
+        try await chatVC.currentConversation.sendMessage(message)
+        print("[MainChatViewController] Initial message sent successfully")
+      }
     } catch {
       print("[MainChatViewController] Failed to send initial message: \(error)")
     }
