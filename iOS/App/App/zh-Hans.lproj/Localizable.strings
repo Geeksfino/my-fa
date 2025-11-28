@@ -149,3 +149,39 @@
 /* Account Opening Flow */
 "account.phone.prompt" = "首先，请提供你的手机号码";
 "account.opening.request" = "我想开户";
+
+/* Disclaimer */
+"disclaimer.title" = "重要提示：演示应用";
+"disclaimer.message" = "MyFA 是一个演示应用，展示用于金融助手的 AI 聊天功能。\n\n• 所有交易均为模拟\n• 不涉及真实资金\n• 市场数据为模拟数据\n• 仅用于教育目的\n\n本应用不提供实际的金融服务、交易或投资管理。";
+"disclaimer.button" = "我明白了";
+"disclaimer.simulation.banner" = "⚠️ 仅限模拟 - 无真实资金";
+
+/* Errors - Trade */
+"error.trade.too.fast.title" = "操作过快";
+"error.trade.too.fast.message" = "请稍等片刻后再发起交易。";
+"error.trade.invalid.title" = "无效的交易请求";
+"error.trade.invalid.message" = "交易链接无效或格式错误。请重试。";
+
+/* Chat */
+"chat.agent.title" = "我的助手";
+"chat.empty.state" = "你好！👋\n点击右上角的 + 开始新对话";
+
+/* Portfolio */
+"portfolio.title" = "我的投资组合";
+"portfolio.detail.format" = "%d 项资产 • 现金：%@";
+"portfolio.share.message" = "与助手分享您当前的投资组合，以获得个性化建议。";
+"portfolio.total.value" = "总价值：%@";
+"portfolio.attach.button" = "附加投资组合";
+"portfolio.details.sent" = "投资组合详情已发送";
+"portfolio.quantity.units" = "%.4f 单位";
+
+/* Calendar */
+"calendar.no.permission" = "未授予日历访问权限\n请在设置中启用";
+"calendar.empty.state" = "📅\n\n未来 30 天内\n没有即将到来的事件";
+"calendar.location.format" = "位置：%@";
+"calendar.notes.format" = "备注：\n%@";
+"calendar.all.day" = "全天 • %@";
+"calendar.sample.location" = "虚拟";
+"calendar.sample.notes" = "未找到日历事件。此示例演示上下文附件预览。";
+"portfolio.display.name" = "我的投资组合";
+"portfolio.current" = "当前投资组合";

@@ -149,3 +149,39 @@
 /* Account Opening Flow */
 "account.phone.prompt" = "First, please provide your phone number";
 "account.opening.request" = "I want to open an account";
+
+/* Disclaimer */
+"disclaimer.title" = "Important: Demo Application";
+"disclaimer.message" = "MyFA is a DEMONSTRATION APPLICATION showcasing AI chat capabilities for financial assistance.\n\n• All trades are SIMULATED\n• No real money is involved\n• Market data is MOCK data\n• For educational purposes only\n\nThis app does NOT provide actual financial services, trading, or investment management.";
+"disclaimer.button" = "I Understand";
+"disclaimer.simulation.banner" = "⚠️ SIMULATION ONLY - No Real Money";
+
+/* Errors - Trade */
+"error.trade.too.fast.title" = "Too Fast";
+"error.trade.too.fast.message" = "Please wait a moment before initiating another trade.";
+"error.trade.invalid.title" = "Invalid Trade Request";
+"error.trade.invalid.message" = "The trade link is invalid or malformed. Please try again.";
+
+/* Chat */
+"chat.agent.title" = "My Agent";
+"chat.empty.state" = "Hello! 👋\nTap + in the top right to start a new conversation";
+
+/* Portfolio */
+"portfolio.title" = "My Portfolio";
+"portfolio.detail.format" = "%d Assets • Cash: %@";
+"portfolio.share.message" = "Share your current portfolio with the agent for personalized advice.";
+"portfolio.total.value" = "Total Value: %@";
+"portfolio.attach.button" = "Attach Portfolio";
+"portfolio.details.sent" = "Portfolio Details Sent";
+"portfolio.quantity.units" = "%.4f units";
+
+/* Calendar */
+"calendar.no.permission" = "Calendar access not granted\nPlease enable in Settings";
+"calendar.empty.state" = "📅\n\nNo upcoming events\nin the next 30 days";
+"calendar.location.format" = "Location: %@";
+"calendar.notes.format" = "Notes:\n%@";
+"calendar.all.day" = "All day • %@";
+"calendar.sample.location" = "Virtual";
+"calendar.sample.notes" = "No calendar events found. This sample illustrates the context attachment preview.";
+"portfolio.display.name" = "My Portfolio";
+"portfolio.current" = "Current Portfolio";

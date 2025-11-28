@@ -51,11 +51,11 @@ final class CalendarContextProvider: NSObject, @preconcurrency ConvoUIContextPro
     private func makeFallbackEvent() -> EKEvent {
         let fallback = EKEvent(eventStore: eventStore)
         fallback.title = LocalizationHelper.localized("calendar.sample.meeting")
-        fallback.location = "Virtual"
+        fallback.location = LocalizationHelper.localized("calendar.sample.location")
         let start = Date().addingTimeInterval(60 * 60) // 1 hour from now
         fallback.startDate = start
         fallback.endDate = start.addingTimeInterval(45 * 60)
-        fallback.notes = "No calendar events found. This sample illustrates the context attachment preview."
+        fallback.notes = LocalizationHelper.localized("calendar.sample.notes")
         return fallback
     }
 }
@@ -183,7 +183,7 @@ struct CalendarContextItem: ConvoUIContextItem {
         let start = CalendarContextItem.displayFormatter.string(from: event.startDate)
         let range: String
         if event.isAllDay {
-            range = "All day • \(start)"
+            range = LocalizationHelper.localized("calendar.all.day", start)
         } else {
             let end = CalendarContextItem.displayFormatter.string(from: event.endDate)
             range = start == end ? start : "\(start) → \(end)"
@@ -385,7 +385,7 @@ final class CalendarEventCollectorView: UIView, UITableViewDataSource, UITableVi
     
     private func showNoPermissionState() {
         let label = UILabel()
-        label.text = "Calendar access not granted\nPlease enable in Settings"
+        label.text = LocalizationHelper.localized("calendar.no.permission")
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .secondaryLabel
@@ -397,7 +397,7 @@ final class CalendarEventCollectorView: UIView, UITableViewDataSource, UITableVi
         let container = UIView()
         
         let label = UILabel()
-        label.text = "📅\n\nNo upcoming events\nin the next 30 days"
+        label.text = LocalizationHelper.localized("calendar.empty.state")
         label.numberOfLines = 0
         label.textAlignment = .center
         label.textColor = .secondaryLabel
@@ -425,7 +425,7 @@ final class CalendarEventCollectorView: UIView, UITableViewDataSource, UITableVi
         cell.textLabel?.text = ev.title ?? LocalizationHelper.localized("calendar.no.title")
         let start = CalendarContextItem.displayFormatter.string(from: ev.startDate)
         let end = CalendarContextItem.displayFormatter.string(from: ev.endDate)
-        let range = ev.isAllDay ? "All day • \(start)" : (start == end ? start : "\(start) → \(end)")
+        let range = ev.isAllDay ? LocalizationHelper.localized("calendar.all.day", start) : (start == end ? start : "\(start) → \(end)")
         cell.detailTextLabel?.text = range
         cell.accessoryType = (indexPath == selectedIndex) ? .checkmark : .none
         return cell
@@ -516,19 +516,19 @@ final class CalendarEventDetailView: UIView {
     }
 
     private func configure() {
-        titleLabel.text = item.event.title ?? "(No Title)"
+        titleLabel.text = item.event.title ?? LocalizationHelper.localized("calendar.no.title")
         timeLabel.text = item.summaryText()
 
         if let location = item.event.location, !location.isEmpty {
             locationLabel.isHidden = false
-            locationLabel.text = "Location: \(location)"
+            locationLabel.text = LocalizationHelper.localized("calendar.location.format", location)
         } else {
             locationLabel.isHidden = true
         }
 
         if let notes = item.event.notes, !notes.isEmpty {
             notesLabel.isHidden = false
-            notesLabel.text = "Notes:\n\(notes)"
+            notesLabel.text = LocalizationHelper.localized("calendar.notes.format", notes)
         } else {
             notesLabel.isHidden = true
         }

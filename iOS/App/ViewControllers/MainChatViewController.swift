@@ -27,7 +27,7 @@ final class MainChatViewController: UIViewController {
   
   private lazy var titleLabel: UILabel = {
     let label = UILabel()
-    label.text = "My Agent"
+    label.text = LocalizationHelper.localized("chat.agent.title")
     label.font = .systemFont(ofSize: 18, weight: .semibold)
     label.textAlignment = .center
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +61,7 @@ final class MainChatViewController: UIViewController {
     view.backgroundColor = .systemBackground
     
     let label = UILabel()
-    label.text = "Hello! 👋\nTap + in the top right to start a new conversation"
+    label.text = LocalizationHelper.localized("chat.empty.state")
     label.numberOfLines = 0
     label.textAlignment = .center
     label.font = .systemFont(ofSize: 20, weight: .medium)
@@ -92,6 +92,27 @@ final class MainChatViewController: UIViewController {
     super.viewDidLoad()
     setupUI()
     showEmptyState()
+    observeLanguageChanges()
+  }
+  
+  private func observeLanguageChanges() {
+    NotificationCenter.default.addObserver(
+      self,
+      selector: #selector(languageDidChange),
+      name: NSNotification.Name("LanguageChanged"),
+      object: nil
+    )
+  }
+  
+  @objc private func languageDidChange() {
+    titleLabel.text = LocalizationHelper.localized("chat.agent.title")
+    if let label = emptyStateView.viewWithTag(999) as? UILabel {
+      label.text = LocalizationHelper.localized("chat.empty.state")
+    }
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
   }
   
   private func setupUI() {

@@ -60,8 +60,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       let timeSinceLastRequest = Date().timeIntervalSince(lastTime)
       if timeSinceLastRequest < tradeRequestCooldown {
         presentError(
-          title: "Too Fast",
-          message: "Please wait a moment before initiating another trade."
+          title: LocalizationHelper.localized("error.trade.too.fast.title"),
+          message: LocalizationHelper.localized("error.trade.too.fast.message")
         )
         return
       }
@@ -70,8 +70,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Validate URL parameters
     guard validateTradeURL(url) else {
       presentError(
-        title: "Invalid Trade Request",
-        message: "The trade link is invalid or malformed. Please try again."
+        title: LocalizationHelper.localized("error.trade.invalid.title"),
+        message: LocalizationHelper.localized("error.trade.invalid.message")
       )
       return
     }
@@ -118,7 +118,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   private func presentError(title: String, message: String) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    alert.addAction(UIAlertAction(title: LocalizationHelper.localized("app.ok"), style: .default))
     window?.rootViewController?.present(alert, animated: true)
   }
   

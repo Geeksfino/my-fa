@@ -33,7 +33,7 @@ class DisclaimerViewController: UIViewController {
         container.addSubview(iconLabel)
         
         let titleLabel = UILabel()
-        titleLabel.text = "Important: Demo Application"
+        titleLabel.text = LocalizationHelper.localized("disclaimer.title")
         titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
@@ -41,16 +41,7 @@ class DisclaimerViewController: UIViewController {
         container.addSubview(titleLabel)
         
         let messageLabel = UILabel()
-        messageLabel.text = """
-        MyFA is a DEMONSTRATION APPLICATION showcasing AI chat capabilities for financial assistance.
-        
-        • All trades are SIMULATED
-        • No real money is involved
-        • Market data is MOCK data
-        • For educational purposes only
-        
-        This app does NOT provide actual financial services, trading, or investment management.
-        """
+        messageLabel.text = LocalizationHelper.localized("disclaimer.message")
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .left
         messageLabel.font = .systemFont(ofSize: 16)
@@ -58,7 +49,7 @@ class DisclaimerViewController: UIViewController {
         container.addSubview(messageLabel)
         
         let agreeButton = UIButton(type: .system)
-        agreeButton.setTitle("I Understand", for: .normal)
+        agreeButton.setTitle(LocalizationHelper.localized("disclaimer.button"), for: .normal)
         agreeButton.backgroundColor = .systemBlue
         agreeButton.setTitleColor(.white, for: .normal)
         agreeButton.titleLabel?.font = .systemFont(ofSize: 18, weight: .semibold)
@@ -93,8 +84,7 @@ class DisclaimerViewController: UIViewController {
             agreeButton.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 32),
             agreeButton.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             agreeButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            agreeButton.heightAnchor.constraint(equalToConstant: 50),
-            agreeButton.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor)
+            agreeButton.bottomAnchor.constraint(equalTo: container.bottomAnchor)
         ])
     }
     

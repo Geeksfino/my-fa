@@ -62,7 +62,7 @@ class TradeConfirmationViewController: UIViewController {
         card.addSubview(disclaimerBanner)
         
         let disclaimerLabel = UILabel()
-        disclaimerLabel.text = "⚠️ SIMULATION ONLY - No Real Money"
+        disclaimerLabel.text = LocalizationHelper.localized("disclaimer.simulation.banner")
         disclaimerLabel.textColor = .systemOrange
         disclaimerLabel.font = .systemFont(ofSize: 12, weight: .bold)
         disclaimerLabel.textAlignment = .center

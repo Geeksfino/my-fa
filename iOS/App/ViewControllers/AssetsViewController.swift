@@ -74,7 +74,10 @@ class AssetsViewController: UIViewController {
         
         let cashLabel = UILabel()
         cashLabel.tag = 101
-        cashLabel.text = "Cash: $0.00"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD"
+        cashLabel.text = LocalizationHelper.localized("assets.cash", formatter.string(from: NSNumber(value: 0)) ?? "$0.00")
         cashLabel.textColor = .secondaryLabel
         cashLabel.font = .systemFont(ofSize: 15)
         cashLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -614,7 +617,7 @@ class HoldingCell: UITableViewCell {
         formatter.currencyCode = "USD"
         
         valueLabel.text = formatter.string(from: NSNumber(value: value))
-        quantityLabel.text = String(format: "%.4f units", holding.quantity)
+        quantityLabel.text = String(format: LocalizationHelper.localized("portfolio.quantity.units"), holding.quantity)
     }
     
     @objc private func askButtonTapped() {
