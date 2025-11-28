@@ -94,7 +94,7 @@ class DisclaimerViewController: UIViewController {
             agreeButton.leadingAnchor.constraint(equalTo: container.leadingAnchor),
             agreeButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             agreeButton.heightAnchor.constraint(equalToConstant: 50),
-            agreeButton.bottomAnchor.constraint(equalTo: container.bottomAnchor)
+            agreeButton.bottomAnchor.constraint(lessThanOrEqualTo: container.bottomAnchor)
         ])
     }
     
