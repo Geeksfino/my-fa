@@ -54,6 +54,21 @@ class TradeConfirmationViewController: UIViewController {
         card.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(card)
         
+        // Add disclaimer banner
+        let disclaimerBanner = UIView()
+        disclaimerBanner.backgroundColor = UIColor.systemOrange.withAlphaComponent(0.2)
+        disclaimerBanner.layer.cornerRadius = 8
+        disclaimerBanner.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(disclaimerBanner)
+        
+        let disclaimerLabel = UILabel()
+        disclaimerLabel.text = "⚠️ SIMULATION ONLY - No Real Money"
+        disclaimerLabel.textColor = .systemOrange
+        disclaimerLabel.font = .systemFont(ofSize: 12, weight: .bold)
+        disclaimerLabel.textAlignment = .center
+        disclaimerLabel.translatesAutoresizingMaskIntoConstraints = false
+        disclaimerBanner.addSubview(disclaimerLabel)
+        
         let titleLabel = UILabel()
         titleLabel.text = LocalizationHelper.localized("trade.confirm.title")
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
@@ -109,7 +124,15 @@ class TradeConfirmationViewController: UIViewController {
             card.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             card.widthAnchor.constraint(equalToConstant: 300),
             
-            titleLabel.topAnchor.constraint(equalTo: card.topAnchor, constant: 24),
+            disclaimerBanner.topAnchor.constraint(equalTo: card.topAnchor, constant: 12),
+            disclaimerBanner.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 12),
+            disclaimerBanner.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -12),
+            disclaimerBanner.heightAnchor.constraint(equalToConstant: 32),
+            
+            disclaimerLabel.centerXAnchor.constraint(equalTo: disclaimerBanner.centerXAnchor),
+            disclaimerLabel.centerYAnchor.constraint(equalTo: disclaimerBanner.centerYAnchor),
+            
+            titleLabel.topAnchor.constraint(equalTo: disclaimerBanner.bottomAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: card.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: card.trailingAnchor, constant: -16),
             
