@@ -1,5 +1,7 @@
 # MyFA - AI Financial Assistant Demo
 
+[🇨🇳 中文](README.zh.md) | [🇺🇸 English](README.md)
+
 **MyFA Demo** is a demonstration iOS application showcasing AI-powered financial assistance capabilities. It features conversational AI, portfolio management, and simulated trading functionality.
 
 > **⚠️ IMPORTANT:** This is a **DEMO/SIMULATION** application for educational purposes only. No real money or actual financial transactions are involved.
@@ -329,6 +331,8 @@ MyFA/
 For actual financial services, consult licensed financial advisors and use production-grade, regulated platforms.
 
 ---
+
+**Language:** [🇨🇳 中文](README.zh.md) | [🇺🇸 English](README.md)
 
 **Version:** 1.0.0  
 **Last Updated:** November 28, 2025
