@@ -37,5 +37,10 @@ struct AppConfig {
   
   /// Default user ID
   static let defaultUserId = "demo-user"
+    
+  //大模型apiKey，用来获取提示词
+  static let apiKey = ""
+  static let endpoint = "https://api.siliconflow.cn/v1/chat/completions"
+    
 }
 
