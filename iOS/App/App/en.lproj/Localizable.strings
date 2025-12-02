@@ -175,13 +175,29 @@
 "portfolio.details.sent" = "Portfolio Details Sent";
 "portfolio.quantity.units" = "%.4f units";
 
-/* Calendar */
-"calendar.no.permission" = "Calendar access not granted\nPlease enable in Settings";
-"calendar.empty.state" = "📅\n\nNo upcoming events\nin the next 30 days";
-"calendar.location.format" = "Location: %@";
-"calendar.notes.format" = "Notes:\n%@";
-"calendar.all.day" = "All day • %@";
-"calendar.sample.location" = "Virtual";
-"calendar.sample.notes" = "No calendar events found. This sample illustrates the context attachment preview.";
 "portfolio.display.name" = "My Portfolio";
 "portfolio.current" = "Current Portfolio";
+
+/* Stock */
+"stock.title" = "Stock";
+"stock.search.title" = "Search Stocks";
+"stock.search.placeholder" = "Enter ticker or name...";
+"stock.section.hot" = "Hot Stocks";
+"stock.search.hint" = "Search by ticker, name, or Pinyin initials";
+
+"tab.strategy" = "Strategy";
+"tab.asset" = "Assets";
+"nav.chat.title" = "AI Investment Assistant";
+"tool.expedia" = "Expedia";
+"tool.booking" = "Booking.com";
+"tool.coursera" = "Coursera";
+"tool.expedia.description" = "Search and book flights, hotels, and vacation packages";
+"tool.booking.description" = "Find and book hotels, apartments, and accommodations worldwide";
+"tool.coursera.description" = "Search and enroll in online courses from top universities and companies";
+"settings.language.zhHans" = "简体中文";
+"settings.language.zhHant" = "繁體中文";
+"settings.language.restart" = "Language Changed";
+"settings.language.restartMessage" = "Please restart the app to apply the new language setting.";
+"settings.language.restartButton" = "OK";
+"strategies.chat.start" = "Start discussion based on strategy \"%@\"";
+"assets.units" = "%.4f units";

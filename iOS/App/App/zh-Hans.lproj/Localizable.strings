@@ -175,13 +175,27 @@
 "portfolio.details.sent" = "投资组合详情已发送";
 "portfolio.quantity.units" = "%.4f 单位";
 
-/* Calendar */
-"calendar.no.permission" = "未授予日历访问权限\n请在设置中启用";
-"calendar.empty.state" = "📅\n\n未来 30 天内\n没有即将到来的事件";
-"calendar.location.format" = "位置：%@";
-"calendar.notes.format" = "备注：\n%@";
-"calendar.all.day" = "全天 • %@";
-"calendar.sample.location" = "虚拟";
-"calendar.sample.notes" = "未找到日历事件。此示例演示上下文附件预览。";
 "portfolio.display.name" = "我的投资组合";
 "portfolio.current" = "当前投资组合";
+
+/* Stock */
+"stock.title" = "股票";
+"stock.search.title" = "搜索股票";
+"stock.search.placeholder" = "输入股票代码或名称...";
+"stock.section.hot" = "热门股票";
+"stock.search.hint" = "支持按股票代码、名称或拼音首字母搜索";
+
+"tab.strategy" = "策略";
+"tab.asset" = "资产";
+"nav.chat.title" = "AI智投助手";
+"tool.expedia" = "Expedia";
+"tool.booking" = "Booking.com";
+"tool.coursera" = "Coursera";
+"tool.expedia.description" = "搜索和预订航班、酒店和度假套餐";
+"tool.booking.description" = "查找和预订全球酒店、公寓和住宿";
+"tool.coursera.description" = "搜索和注册来自顶尖大学和公司的在线课程";
+"settings.language.zhHans" = "简体中文";
+"settings.language.zhHant" = "繁體中文";
+"settings.language.restart" = "语言已更改";
+"settings.language.restartMessage" = "请重启应用以应用新的语言设置。";
+"settings.language.restartButton" = "确定";
